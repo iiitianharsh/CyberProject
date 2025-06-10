@@ -27,6 +27,9 @@ const passwordSchema = new schema({
     required: true,
     trim: true,
   },
+  pwdScheme :{
+    type:String,
+  },
 });
 
 const Password = mongoose.model("Password", passwordSchema);
