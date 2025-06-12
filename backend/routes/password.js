@@ -12,8 +12,8 @@ const router = express.Router();
 
 router.post("/addPass", verifyAccess, addPass);
 router.post("/showPass/:passId", verifyAccess, showPass);
-router.delete("/delPass/:passId", verifyAccess, deletePass);
-router.put("/updatePass/:passId", verifyAccess, updatePass);
+router.delete("/delPass/passId", verifyAccess, deletePass);
+router.put("/updatePass/passId", verifyAccess, updatePass);
 
 router.get("/getallpass", verifyAccess, getallpass);
 router.post("/getpass/:passId", verifyAccess, getPass);
