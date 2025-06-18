@@ -7,7 +7,7 @@ const Password = require("../models/passwords");
 exports.addPass = async (req, res) => {
   const { username, Title, websiteURL, password } = req.body;
   const user = req.user;
-
+  
   const publicKey = req.user.publicKey;
   const key_public = new NodeRSA(publicKey);
 
@@ -30,6 +30,7 @@ exports.addPass = async (req, res) => {
     .catch((err) => {
       res.status(500).json({
         msg: "internal server error",
+      
       });
     });
 };
@@ -133,7 +134,7 @@ exports.getPass = async (req, res) => {
       });
     });
 };
-
+// getting all passwords from email
 exports.getallpass = async (req, res) => {
   const { email } = req.user;
   await Password.find({ email: email })
